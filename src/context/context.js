@@ -7,6 +7,13 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
+  function addWeb3ProviderToContext(data) {
+    dispatch({
+      type: "ADD_WEB3_PROVIDER",
+      payload: data,
+    });
+  }
+
   function setLoading(data) {
     dispatch({
       type: "SET_LOADING",
@@ -16,6 +23,7 @@ export const GlobalProvider = ({ children }) => {
 
   const value = {
     ...state,
+    addWeb3ProviderToContext,
     setLoading,
   };
 

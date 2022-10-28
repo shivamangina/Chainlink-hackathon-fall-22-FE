@@ -21,6 +21,12 @@ export default function Header() {
             >
               Home
             </Link>
+            <Link
+              to="/dashboard"
+              className="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900"
+            >
+              Dashboard
+            </Link>
           </nav>
         </div>
       </div>
