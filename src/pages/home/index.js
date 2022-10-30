@@ -1,6 +1,11 @@
 import { createClient } from "urql";
 import { useEffect, useState } from "react";
 import Config from "../../Config";
+import TableReceived from "./TableReceived";
+import TableSent from "./TableSent";
+import Widget from "./Widget";
+import Chart from "./ChartSent";
+import Chart2 from "./ChartReceieved";
 
 const API_URL = Config.GRAPH_PROTOCOL.API_URL;
 
@@ -34,22 +39,15 @@ function App() {
     setTransfers(response.data.transfers);
   }
   return (
-    <div>
-      <table>
-        <tr>
-          <th>From</th>
-          <th>To</th>
-          <th>Value</th>
-        </tr>
-        {transfers.map((transfer, index) => (
-          <tr key={index}>
-            <td>{transfer.from}</td>
-            <td>{transfer.to}</td>
-            <td>{transfer.value}</td>
-          </tr>
-        ))}
-      </table>
-    </div>
+    <>
+      <Widget />
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <TableSent className="relative flex items-center space-x-3" />
+        <Chart className="relative flex items-center space-x-3" />
+        <TableReceived className="relative flex items-center space-x-3" />
+        <Chart2 className="relative flex items-center space-x-3" />
+      </div>
+    </>
   );
 }
 
