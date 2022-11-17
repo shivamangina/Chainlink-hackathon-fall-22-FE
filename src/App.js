@@ -35,9 +35,8 @@ const App = () => {
           accounts,
           Contract,
         });
-        setTimeout(() => {
-          setLoading(false);
-        }, 1000);
+        setLoading(false);
+
       } catch (error) {
         if (!error.message.includes("No User Found")) alert(error);
         setLoading(false);

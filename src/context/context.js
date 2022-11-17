@@ -21,10 +21,35 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
+  function setOrganization(data) {
+    dispatch({
+      type: "SET_ORGANIZATION",
+      payload: data,
+    });
+  }
+
+  function setTransactions(data) {
+    dispatch({
+      type: "SET_TRANSACTIONS",
+      payload: data,
+    });
+  }
+
+  function addTransaction(data) {
+    dispatch({
+      type: "ADD_TRANSACTION",
+      payload: data,
+    });
+  }
+
+  
   const value = {
     ...state,
     addWeb3ProviderToContext,
     setLoading,
+    setOrganization,
+    setTransactions,
+    addTransaction,
   };
 
   return (

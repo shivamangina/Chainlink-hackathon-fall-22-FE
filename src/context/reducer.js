@@ -6,6 +6,24 @@ export default (state, action) => {
         ...state,
         loading: action.payload,
       };
+    case "SET_ORGANIZATION":
+      return {
+        ...state,
+        organization: action.payload,
+      };
+    case "SET_TRANSACTIONS":
+      return {
+        ...state,
+        transactions: action.payload,
+      };
+    case "ADD_TRANSACTION":
+      return {
+        ...state,
+        transactions: [
+          ...state.transactions,
+          action.payload,
+        ],
+      };
     case "ADD_WEB3_PROVIDER":
       const { provider, signer, accounts, Contract } = action.payload;
       return {

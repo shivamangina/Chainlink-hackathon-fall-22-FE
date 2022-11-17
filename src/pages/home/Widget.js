@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { GlobalContext } from "../../context/context";
 import { ArrowDownIcon, ArrowUpIcon } from "@heroicons/react/20/solid";
 import {
   CursorArrowRaysIcon,
@@ -39,6 +40,8 @@ function classNames(...classes) {
 }
 
 const Widget = () => {
+  const context = useContext(GlobalContext);  
+  
   return (
     <div>
       <dl className="m-7 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

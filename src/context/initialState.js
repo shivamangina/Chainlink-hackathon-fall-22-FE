@@ -4,4 +4,6 @@ export const initialState = {
   signer: null,
   accounts: null,
   Contract: null,
+  organization: null,
+  transactions: null,
 };
