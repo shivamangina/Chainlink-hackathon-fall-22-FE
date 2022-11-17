@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 
-import Home from "./pages/home/Home";
-import Dashboard from "./pages/home/Dashboard";
+import About from "./pages/about/About";
+import Home from "./pages/Home";
 
 function Routing() {
   return (
@@ -13,8 +13,8 @@ function Routing() {
       <BrowserRouter>
         <Header />
         <Routes>
+          <Route exact path="/about" element={<About />} />
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/dashboard" element={<Dashboard />} />
         </Routes>
         <Footer />
       </BrowserRouter>

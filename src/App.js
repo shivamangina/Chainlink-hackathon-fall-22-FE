@@ -12,6 +12,9 @@ const App = () => {
   useEffect(() => {
     (async () => {
       try {
+        if (!window.ethereum) {
+          return;
+        }
         await window.ethereum.enable();
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const accounts = await provider.listAccounts();
@@ -40,7 +43,7 @@ const App = () => {
         setLoading(false);
       }
     })();
-  }, []);
+  }, [window.ethereum]);
 
   return <>{loading ? <Loader /> : <Routing />}</>;
 };
