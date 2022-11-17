@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-      <Widget transactions={transactions} />
+      <Widget transactions={transactions || []} />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-1">
         <Table className="relative flex items-center space-x-12" transactions={transactions || []} tableType=""  />
       </div>
