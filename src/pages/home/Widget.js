@@ -8,43 +8,55 @@ import {
   BanknotesIcon,
 } from "@heroicons/react/24/outline";
 
-const stats = [
-  {
-    id: 1,
-    name: "Transactions",
-    stat: "71,897",
-    icon: BanknotesIcon,
-    change: "122",
-    changeType: "increase",
-  },
-  {
-    id: 2,
-    name: "Total Campaigns",
-    stat: "5",
-    icon: EnvelopeOpenIcon,
-    change: "10%",
-    changeType: "increase",
-  },
-  {
-    id: 3,
-    name: "No of Users Donated",
-    stat: "2457",
-    icon: CursorArrowRaysIcon,
-    change: "3%",
-    changeType: "decrease",
-  },
-];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Widget = () => {
-  const context = useContext(GlobalContext);  
+const Widget = ({ transactions }) => {
   
+  const stats = [
+    {
+      id: 1,
+      name: "Transactions",
+      stat: transactions.length,
+      icon: BanknotesIcon,
+      change: "50%",
+      changeType: "increase",
+    },
+    {
+      id: 2,
+      name: "Sent",
+      stat: transactions.reduce((storage, curr) =>  {
+        return storage + parseInt(curr["amount"]._hex)
+      }, 0),
+      icon: ArrowUpIcon,
+      change: "10%",
+      changeType: "increase",
+    },
+    {
+      id: 2,
+      name: "Recieved",
+      stat: transactions.reduce((storage, curr) =>  {
+        return storage + parseInt(curr["amount"]._hex)
+      }, 0),
+      icon: ArrowDownIcon,
+      change: "10%",
+      changeType: "increase",
+    },
+    {
+      id: 3,
+      name: "Sum",
+      stat: "2457",
+      icon: CursorArrowRaysIcon,
+      change: "3%",
+      changeType: "decrease",
+    },
+  ];
+
   return (
     <div>
-      <dl className="m-7 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <dl className="m-7 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((item) => (
           <div
             key={item.id}

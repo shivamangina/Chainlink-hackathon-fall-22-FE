@@ -27,9 +27,11 @@ function App() {
 
   return (
     <>
-      <Widget />
+      <Widget transactions={transactions} />
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-1">
+        <Table className="relative flex items-center space-x-12" transactions={transactions || []} tableType=""  />
+      </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <Table className="relative flex items-center space-x-3" transactions={transactions || []} tableType=""  />
         <Chart className="relative flex items-center space-x-3" />
         {/* <Table className="relative flex items-center space-x-3" transactions={transactions || []} tableType="Recieved"  /> */}
         <Chart2 className="relative flex items-center space-x-3" />

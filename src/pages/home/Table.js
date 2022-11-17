@@ -4,7 +4,7 @@ import React from "react";
 const Table = ({ transactions, tableType }) => {
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8">
+    <div className="px-12 sm:px-12 lg:px-12">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
           <h1 className="text-xl font-semibold text-gray-900">
