@@ -11,8 +11,8 @@ export default function Footer() {
             to="/"
             className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0"
           >
-            <ChartPieIcon className="w-8 h-8" />
-            <span className="text-l font-black leading-none text-gray-900 select-none">
+            <ChartPieIcon className="w-8 h-8 text-yellow-500" />
+            <span className="w-full text-xl font-bold text-yellow-500 ">
               Immunomic
             </span>
           </Link>
