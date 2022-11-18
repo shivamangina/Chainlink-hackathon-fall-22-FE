@@ -5,7 +5,7 @@ import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 
 import About from "./pages/about/About";
-import Home from "./pages/Home";
+import Home from "./pages/home";
 
 function Routing() {
   return (

@@ -1,4 +1,5 @@
 import React from "react";
+import { ethers } from "ethers";
 
 const Table = ({ transactions, tableType }) => {
   return (
@@ -8,10 +9,6 @@ const Table = ({ transactions, tableType }) => {
           <h1 className="text-xl font-semibold text-gray-900">
             Transactions {tableType}
           </h1>
-          <span className="text-xl font-semibold text-gray-500">
-            (Note: For now we have implemented Only IN transactions, need to
-            implement OUT in future)
-          </span>
         </div>
       </div>
       <div className="mt-8 flex flex-col">
@@ -82,13 +79,13 @@ const Table = ({ transactions, tableType }) => {
                           {transaction["to"]}
                         </td>
                         <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
-                          {parseInt(transaction["amount"]._hex)}
+                          {ethers.utils.formatUnits(transaction["amount"], 0)}
                         </td>
                         <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
                           {transaction["paymentMethod"]}
                         </td>
                         <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">
-                          {parseInt(transaction["paymentTime"]._hex)}
+                          {transaction["paymentTime"].toString()}
                         </td>
                       </tr>
                     );
