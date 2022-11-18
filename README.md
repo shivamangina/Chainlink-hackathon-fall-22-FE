@@ -16,6 +16,10 @@ Visit this [link](https://github.com/shivamangina/Chainlink-hackathon-fall-22-BE
 <br>
 <br>
 
+## Note
+
+Please add `contractAddress` of Chainlink Consumer Contract in Config.js file.
+
 ## Available Scripts
 
 In the project directory, you can run:
