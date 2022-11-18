@@ -12,8 +12,14 @@ export default function Footer() {
             className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0"
           >
             <ChartPieIcon className="w-8 h-8 text-yellow-500" />
-            <span className="w-full text-xl font-bold text-yellow-500 ">
-              Immunomic
+            <span
+              className="w-full text-xl font-bold  text-yellow-500 "
+              style={{
+                fontFamily:
+                  "source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace",
+              }}
+            >
+              immunomic
             </span>
           </Link>
         </div>
