@@ -25,8 +25,8 @@ const App = () => {
           );
         const signer = provider.getSigner();
         const Contract = new ethers.Contract(
-          Config.CHAIN_LINK.GOERLI.CONTRACT_ADDRESS,
-          Config.CHAIN_LINK.GOERLI.ABI,
+          Config.CHAIN_LINK.MUMBAI.CONTRACT_ADDRESS,
+          Config.CHAIN_LINK.MUMBAI.ABI,
           signer
         );
         await addWeb3ProviderToContext({
@@ -36,7 +36,6 @@ const App = () => {
           Contract,
         });
         setLoading(false);
-
       } catch (error) {
         if (!error.message.includes("No User Found")) alert(error);
         setLoading(false);

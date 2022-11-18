@@ -1,8 +1,6 @@
 import React from "react";
 
-
 const Table = ({ transactions, tableType }) => {
-
   return (
     <div className="px-12 sm:px-12 lg:px-12">
       <div className="sm:flex sm:items-center">
@@ -10,6 +8,10 @@ const Table = ({ transactions, tableType }) => {
           <h1 className="text-xl font-semibold text-gray-900">
             Transactions {tableType}
           </h1>
+          <span className="text-xl font-semibold text-gray-500">
+            (Note: For now we have implemented Only IN transactions, need to
+            implement OUT in future)
+          </span>
         </div>
       </div>
       <div className="mt-8 flex flex-col">
@@ -66,7 +68,7 @@ const Table = ({ transactions, tableType }) => {
                 <tbody className="divide-y divide-gray-200 bg-white">
                   {transactions.map((transaction) => {
                     return (
-                      <tr key={transaction["transactionId"]}>
+                      <tr key={transaction["requestId"]}>
                         <td className="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500 sm:pl-6">
                           {transaction["transactionId"]}
                         </td>
@@ -89,7 +91,7 @@ const Table = ({ transactions, tableType }) => {
                           {parseInt(transaction["paymentTime"]._hex)}
                         </td>
                       </tr>
-                    )
+                    );
                   })}
                 </tbody>
               </table>

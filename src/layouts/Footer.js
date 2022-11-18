@@ -13,7 +13,7 @@ export default function Footer() {
           >
             <ChartPieIcon className="w-8 h-8" />
             <span className="text-l font-black leading-none text-gray-900 select-none">
-              Block Ledger
+              Immunomic
             </span>
           </Link>
         </div>

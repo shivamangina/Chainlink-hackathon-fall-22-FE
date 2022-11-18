@@ -8,13 +8,11 @@ import {
   BanknotesIcon,
 } from "@heroicons/react/24/outline";
 
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const Widget = ({ transactions }) => {
-  
   const stats = [
     {
       id: 1,
@@ -27,8 +25,8 @@ const Widget = ({ transactions }) => {
     {
       id: 2,
       name: "Sent",
-      stat: transactions.reduce((storage, curr) =>  {
-        return storage + parseInt(curr["amount"]._hex)
+      stat: transactions.reduce((storage, curr) => {
+        return storage + parseInt(curr["amount"]._hex);
       }, 0),
       icon: ArrowUpIcon,
       change: "10%",
@@ -37,26 +35,28 @@ const Widget = ({ transactions }) => {
     {
       id: 2,
       name: "Recieved",
-      stat: transactions.reduce((storage, curr) =>  {
-        return storage + parseInt(curr["amount"]._hex)
+      stat: transactions.reduce((storage, curr) => {
+        return storage + parseInt(curr["amount"]._hex);
       }, 0),
       icon: ArrowDownIcon,
       change: "10%",
       changeType: "increase",
     },
-    {
-      id: 3,
-      name: "Sum",
-      stat: "2457",
-      icon: CursorArrowRaysIcon,
-      change: "3%",
-      changeType: "decrease",
-    },
+    // {
+    //   id: 3,
+    //   name: "Users",
+    //   stat: transactions.reduce((storage, curr) => {
+    //     return storage + parseInt(curr["amount"]._hex);
+    //   }, 0),
+    //   icon: CursorArrowRaysIcon,
+    //   change: "3%",
+    //   changeType: "decrease",
+    // },
   ];
 
   return (
     <div>
-      <dl className="m-7 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <dl className="m-7 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {stats.map((item) => (
           <div
             key={item.id}

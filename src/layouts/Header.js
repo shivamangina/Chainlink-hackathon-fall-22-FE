@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ChartPieIcon } from "@heroicons/react/20/solid";
+import Logo from "../assets/immunomic.jpeg";
 
 export default function Header() {
   return (
@@ -13,7 +14,8 @@ export default function Header() {
           >
             <ChartPieIcon className="w-8 h-8" />
             <span className="text-l font-black leading-none text-gray-900 select-none">
-              Block Ledger
+              {/* <img src={Logo} width="100" height="100" /> */}
+              Immunomic
             </span>
           </Link>
         </div>
@@ -24,14 +26,16 @@ export default function Header() {
           >
             About Us
           </Link>
-          <Link
-            to="/project"
+          <a
+            href="https://github.com/shivamangina/Chainlink-hackathon-fall-22-BE#chainlink-fall-2022-hackathon"
+            target="_blank"
             className="font-medium leading-6 text-gray-600 hover:text-gray-900"
           >
             Our Project
-          </Link>
+          </a>
           <a
             href="#"
+            target="_blank"
             className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700"
           >
             Demo
