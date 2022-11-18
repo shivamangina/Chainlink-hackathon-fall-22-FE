@@ -3,8 +3,8 @@ import { GlobalContext } from "../../context/context";
 import Config from "../../Config";
 import Table from "./Table";
 import Widget from "./Widget";
-import Chart from "./ChartSent";
-import Chart2 from "./ChartReceieved";
+import LineChart from "./LineChart";
+import BarChart from "./BarChart";
 
 function App() {
   const {
@@ -39,8 +39,14 @@ function App() {
         />
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <Chart className="relative flex items-center" />
-        <Chart2 className="relative flex items-center space-x-3" />
+        <LineChart
+          transactions={transactions || []}
+          className="relative flex items-center"
+        />
+        <BarChart
+          transactions={transactions || []}
+          className="relative flex items-center space-x-3"
+        />
       </div>
     </>
   );
